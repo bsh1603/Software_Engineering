@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+
+{% block contents %}
+
+<form name="form" action="{{url_for('member.member_join')}}" method='POST' onsubmit="return checkForm()">
+    <div class="form-group">
+        <label for="name">이름</label>
+        <input class="form-control" type="text" name="name" id="name"> 
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input class="form-control" type="text" name="email" id="email"> 
+    </div>
+    <div class="form-group">
+        <label for="pass">비밀번호</label>
+        <input class="form-control" type="password" name="pass" id="pass1"> 
+    </div>
+    <div class="form-group">
+        <label for="pass2">비밀번호 확인</label>
+        <input class="form-control" type="password" name="pass2" id="pass2"> 
+    </div>
+    <br><br>
+    <div class="text-center"><input class="btn btn-dark" type="submit" value="회원가입"></div>
+    </div>
+</form>
+
+{% endblock %}

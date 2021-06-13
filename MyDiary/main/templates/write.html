@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block contents %}
+<script>
+    $(document).ready(function(){
+        $("#summernote").summernote({
+            height: 300,
+            minHeight: 200,
+            maxHeight: null
+        });
+    })
+</script>
+
+<form name="form" method="POST" action="{{url_for('board.board_write')}}">
+    <div class="form-group">
+        <label for="name">작성자</label>
+        <input class="form-control" id="name" type="text" name="name" value="{{session['name']}}" readonly>
+    </div>
+    <div class = "form-group">
+        <label for="title">제목</label>
+        <input class="form-control" type="text" name="title" id="title" placeholder="제목을 입력하세요">
+    </div>
+    <div class = "form-group">
+        <label for="contents">내용</label>
+        <textarea rows="8" class="form-control" name="contents" id="summernote" placeholder="내용을 입력하세요"></textarea>
+    </div>
+    <br><br>
+    <div style=text-align:right;><input class="btn btn-dark" type="submit" value="upload"></div>
+</form>
+
+{% endblock %}
+    
